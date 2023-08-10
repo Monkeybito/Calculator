@@ -16,8 +16,20 @@ function divide(a,b){
 
 let number1 = 1
 let number2 = 1
-let operator = +
+let sign = "+"
 
+function operator(num1, sign, num2){
+    if (sign === "+"){
+        return add(num1, num2)
+    }
+    else if (sign === "-"){
+        return subtract(num1, num2)
+    }
+    else if (sign === "*"){
+        return multiply(num1, num2)
+    }
+    else if (sign === "/"){
+        return divide(num1, num2)
+    }
+}
 
-Create a new function operate that takes an operator and 2 numbers and then 
-calls one of the above functions on the numbers.
