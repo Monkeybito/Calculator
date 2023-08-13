@@ -1,5 +1,30 @@
 .calculator{
-    width: 250px;
-    height: 350px;
+    padding: 40px 30px;
+    width: 650px;
+    height: 850px;
     background-color: gray;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 15px 15px;
+
+}
+
+.display{
+    grid-column: 1 / 5;
+    grid-row: 1;
+    background-color: green;
+    border-radius: 10%;
+    border: 2px solid black;
+}
+
+.button{
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 175%;
+    border-radius: 10%;
+    border: 2px solid black; 
 }
