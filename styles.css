@@ -21,9 +21,10 @@
     justify-content: end;
     align-items: end;
     font-weight: bolder;
-    font-size: 400%;
+    font-size: 350%;
     color:black;
     padding: 5px;
+    border-radius: 3%;
 }
 
 .button{
