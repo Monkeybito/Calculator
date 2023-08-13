@@ -36,6 +36,7 @@ let currentnumber = ""
 let sign = ""
 let counter = 0
 let afterequal = 0
+let afteroperator = 0
 const reg = new RegExp('^[0-9]+$');
 
 
@@ -50,15 +51,19 @@ buttons.forEach(button => button.addEventListener("click", function(e){
         counter = 0
         currentnumber = ""
         oldnumber = ""
+        afteroperator = 0
+        afterequal = 0
         return
     }
     
     else if(button.textContent === "="){
+        if(afteroperator === 1 || afterequal === 1){return}
         currentnumber = operator(parseInt(oldnumber), sign, parseInt(currentnumber))
         oldnumber = currentnumber 
         display.textContent = currentnumber 
         counter = 0
         afterequal = 1
+        afteroperator = 0
         }
         
     
@@ -66,8 +71,11 @@ buttons.forEach(button => button.addEventListener("click", function(e){
         if (afterequal === 1){return}
         display.textContent += button.textContent
         currentnumber += button.textContent
+        afteroperator = 0
+        afterequal = 0
     }
     else if (button.textContent === "+" || "-" || "*" || "/"){
+        if (afteroperator === 1){return}
         afterequal = 0
         if (counter === 0){
             counter = 1
@@ -75,6 +83,7 @@ buttons.forEach(button => button.addEventListener("click", function(e){
             currentnumber = ""
             sign = button.textContent
             display.textContent += button.textContent
+            afteroperator = 1
             return
         }
         else if (counter === 1){
@@ -83,6 +92,7 @@ buttons.forEach(button => button.addEventListener("click", function(e){
             display.textContent = oldnumber 
             display.textContent += button.textContent
             sign = button.textContent
+            afteroperator = 0
         }
     }
    
