@@ -7,6 +7,8 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     gap: 15px 15px;
+    border-radius: 5%;
+    border: 5px solid black;
 
 }
 
@@ -14,8 +16,14 @@
     grid-column: 1 / 5;
     grid-row: 1;
     background-color: green;
-    border-radius: 10%;
     border: 2px solid black;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    font-weight: bolder;
+    font-size: 400%;
+    color:black;
+    padding: 5px;
 }
 
 .button{
@@ -27,4 +35,10 @@
     font-size: 175%;
     border-radius: 10%;
     border: 2px solid black; 
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

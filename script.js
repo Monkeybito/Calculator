@@ -33,3 +33,4 @@ function operator(num1, sign, num2){
     }
 }
 
+const buttons = document.querySelectorAll(".button");
