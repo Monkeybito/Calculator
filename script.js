@@ -34,3 +34,7 @@ function operator(num1, sign, num2){
 }
 
 const buttons = document.querySelectorAll(".button");
+buttons.forEach(button => button.addEventListener("click", function(e){
+    let content = button.textContent
+    console.log(content)
+}))
